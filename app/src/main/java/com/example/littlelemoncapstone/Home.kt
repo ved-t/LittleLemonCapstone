@@ -56,7 +56,6 @@ fun Home(innerPadding: PaddingValues, navController: NavHostController, networkV
 
     val searchPhrase by networkViewModel.searchQuery.collectAsState()
 
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top,
@@ -212,7 +211,7 @@ fun Home(innerPadding: PaddingValues, navController: NavHostController, networkV
                     MenuItem(item)
                 }
             }
-        }
+        }   
     }
 }
 

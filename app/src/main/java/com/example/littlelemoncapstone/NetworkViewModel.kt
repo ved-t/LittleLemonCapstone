@@ -40,7 +40,7 @@ class NetworkViewModel @Inject constructor(private val repository: MenuRepositor
     private val _category = MutableStateFlow("")
     val category : StateFlow<String> = _category
 
-    val categoryFilter: StateFlow<List<MenuItemEntity>> = combine(menuItems, category){item, query ->
+    private val categoryFilter: StateFlow<List<MenuItemEntity>> = combine(menuItems, category){ item, query ->
         item.filter { it.category.contains(query, ignoreCase = true) }
     }.stateIn(
         viewModelScope,
